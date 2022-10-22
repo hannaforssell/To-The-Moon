@@ -1,0 +1,370 @@
+* {
+    box-sizing: border-box;
+    font-family: Rubik, sans-serif;
+}
+
+.clearfix::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+
+/*-------------FIRST PAGE-------------*/
+
+.first-page {
+    min-height: 100vh;
+    width: auto;
+    position: relative;
+    background-image: url("../assets/photos/adam-miller-dBaz0xhCkPY-unsplash.jpg");
+    background-size: cover;
+    background-position: center;
+}
+
+/*-------------Burger Menu-------------*/
+
+.burger-menu {
+    position: fixed;
+    z-index: 5;
+    width: 35px;
+    height: 35px;
+    right: 20px;
+    top: 20px;
+    background: transparent;
+    border: 0;
+    pointer-events: none;
+}
+
+.menu-hover:hover .burger-menu span:nth-child(2) {
+    left: 0;
+}
+
+.burger-menu span {
+    position: absolute;
+    display: block;
+    background-color: black;
+    border: 1px solid #ffffff66;
+    width: 40px;
+    height: 6px;
+    margin-bottom: 8px;
+    border-radius: 6px;
+}
+
+.burger-menu span:nth-child(1) {
+    top: 5px;
+    left: 0;
+}
+
+.burger-menu span:nth-child(2) {
+    left: -6px;
+    transition: left 0.3s ease-in-out;
+}
+
+.burger-menu span:nth-child(3) {
+    top: 31px;
+    left: 0;
+}
+
+.burger-menu-checkbox {
+    position: fixed;
+    z-index: 4;
+    top: 18px;
+    right: 5px;
+    width: 60px;
+    height: 40px;
+    opacity: 0;
+}
+
+.burger-menu-checkbox:checked + .burger-menu span {
+    transition: all 0.5s ease-in-out;
+}
+
+.burger-menu-checkbox:checked + .burger-menu span:nth-child(1) {
+    transform: rotate(45deg);
+    top: 20px;
+}
+
+.burger-menu-checkbox:checked + .burger-menu span:nth-child(2) {
+    opacity: 0;
+}
+
+.burger-menu-checkbox:checked + .burger-menu span:nth-child(3) {
+    transform: rotate(-45deg);
+    top: 20px;
+}
+
+/*-------------Hidden Menu-------------*/
+
+.hidden-menu {
+    position: fixed;
+    z-index: 3;
+    top: 0;
+    left: 0;
+    background-color: rgba(255, 255, 255, 0.7);
+    width: 100vw;
+    height: 100vh;
+    opacity: 0;
+    transition: all 0.8s cubic-bezier(0.075, 0.82, 0.165, 1);
+    visibility: hidden;
+    display: flex;
+    justify-content: center;
+}
+
+.hidden-menu ul {
+    position: relative;
+    font-size: 3.3rem;
+    font-weight: 900;
+    text-transform: uppercase;
+    width: 350px;
+}
+
+.hidden-menu li {
+    color: rgba(0, 0, 0);
+    cursor: pointer;
+    text-shadow: 0 4px 1px #c9c7c7;
+}
+
+.burger-menu-checkbox:checked ~ nav {
+    visibility: visible;
+    opacity: 1;
+}
+
+.hidden-menu > ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    justify-content: space-evenly;
+    text-align: center;
+}
+
+/*-------------To the Moon box-------------*/
+
+.to-the-moon-box {
+    position: absolute;
+    width: 180px;
+    height: 200px;
+    top: 70px;
+    left: 40px;
+    padding-left: 10px;
+    padding-right: 10px;
+    border: 4px solid black;
+    background-color: rgba(255, 255, 255, 0.5);
+}
+
+.to-the-moon-box h1 {
+    position: relative;
+    text-transform: uppercase;
+    font-size: 2.7rem;
+    line-height: 1.1;
+    word-spacing: 100vw;
+    text-align: center;
+    bottom: 15px;
+
+}
+
+.to-the-moon-box a {
+    position: relative;
+    bottom: 30px;
+    text-decoration: none;
+    color: black;
+}
+
+.read-our-story-arrow {
+    position: relative;
+    font-family: "Fira Code";
+    font-size: 1rem;
+    color: black;
+    margin-bottom: 2rem;
+    left: 10px;
+    transition: left 0.5s;
+}
+
+.to-the-moon-box a:hover .read-our-story-arrow{
+    left: 30px;
+}
+
+/*-------------Next Page Arrow-------------*/
+
+.next-page-arrow {
+    position: absolute;
+    font-family: "Fira Code";
+    font-size: 2rem;
+    color: white;
+    transform: rotate(90deg);
+    align-self: flex-end;
+    cursor: pointer;
+    bottom: 20px;
+    left: 50%;
+    text-align: center;
+    transition: 0.3s ease-in-out;
+    text-decoration: none;
+}
+
+.next-page-arrow:hover {
+    margin-bottom: -1rem;
+}
+
+/*-------------SECOND PAGE-------------*/
+
+.second-page {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url("../assets/photos/space.jpg");
+    color: white;
+    min-height: 100vh;
+    width: auto;
+    position: absolute;
+    background-size: cover;
+    background-position: center;
+    text-align: left;
+    padding-left: 50px;
+    padding-right: 50px;
+    padding-bottom: 100px;
+}
+
+/*-------------Space Ventures Heading-------------*/
+
+.space-ventures {
+    height: 100px;
+}
+
+.space-word {
+    display: block;
+    position: relative;
+    z-index: 1;
+    text-shadow: 0 3px 3px black;
+    font-size: 3.8rem;
+}
+
+.ventures-word {
+    position: relative;
+    top: -70px;
+    left: 60px;
+    z-index: 0;
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: 900;
+    font-size: 4.2rem;
+    opacity: 0.6;
+}
+
+/*-------------Major Tom section-------------*/
+
+.first-part-second-page, .second-part-second-page {
+    font-size: 1rem;
+    line-height: 1.5;
+}
+
+.major-tom-heading {
+    font-size: 1.7rem;
+}
+
+.floating-quote {
+    font-size: 1.2rem;
+    font-style: italic;
+    font-weight: 300;
+    position: relative;
+}
+
+.floating-quote::before {
+    content: open-quote;
+    position: absolute;
+    top: -30px;
+    left: -20px;
+    font-size: 5rem;
+    opacity: 0.3;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+.floating-quote::after {
+    content: close-quote;
+    position: absolute;
+    bottom: -60px;
+    font-size: 5rem;
+    opacity: 0.3;
+    margin-left: -20px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+.hidden-quote {
+    display: none;
+    font-size: 2.5rem;
+    font-weight: 300;
+    font-style: italic;
+    width: 60%;
+    margin-top: 100px;
+    margin-bottom: 30px;
+    opacity: 0.5;
+    background: #D200A2;
+    background: linear-gradient(to bottom right, #D200A2 0%, #F5F3F3 38%, #D200A2 100%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.major-tom-photo {
+    display: none;
+    height: 180px;
+    width: auto;
+    float: right;
+    transform: rotate(5deg);
+    margin-right: 50px;
+}
+
+/*-------------Read more about Major Tom-------------*/
+
+.major-tom-link {
+    color: #B22222;
+    position: relative;
+    bottom: 10px;
+    text-decoration: none;
+}
+
+.major-tom-link-text {
+    text-decoration: underline;
+}
+
+.major-tom-arrow {
+    position: relative;
+    font-family: "Fira Code";
+    font-size: 1rem;
+    margin-bottom: 2rem;
+    left: 10px;
+    transition: left 0.5s;
+}
+
+.major-tom-link:hover .major-tom-arrow{
+    left: 30px;
+}
+
+/*-------------Cookies-------------*/
+
+.cookies {
+    background-color: black;
+    display: flex;
+    position: fixed;
+    z-index: 1;
+    bottom: 0;
+    width: 100vw;
+    height: 12vh;
+    justify-content: space-between;
+}
+
+.cookies p {
+    position: relative;
+    width: 70%;
+    padding-left: 20px;
+    color: #ab1d6d;
+    text-shadow: 0px 0px 3px #B22222;
+}
+
+.accept-btn button {
+    text-transform: uppercase;
+    position: relative;
+    right: 10px;
+    font-weight: 900;
+    background-color: #00035e;
+    color: white;
+    padding: 1rem;
+    border: none;
+    margin: 1rem;
+}
